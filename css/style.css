@@ -1727,7 +1727,7 @@ h3.agileits-icons-title {
 .w3_agile_contact_grid1 form{
 	margin-top:1em;
 }
-.w3_agile_contact_grid1 input[type="text"], .w3_agile_contact_grid1 input[type="email"], .w3_agile_contact_grid1 textarea {
+.w3_agile_contact_grid1 input[type="text"], .w3_agile_contact_grid1 input[type="tel"],.w3_agile_contact_grid1 input[type="email"], .w3_agile_contact_grid1 textarea {
     outline: none;
     width: 100%;
     background: #f7f7f7;
@@ -1737,7 +1737,7 @@ h3.agileits-icons-title {
     border: none;
     border-top: 2px solid #d9d7d7;
 }
-.w3_agile_contact_grid1 input[type="email"],.w3_agile_contact_grid1 textarea{
+.w3_agile_contact_grid1 input[type="email"],.w3_agile_contact_grid1 input[type="tel"],.w3_agile_contact_grid1 textarea{
 	margin:1em 0;
 }
 .w3_agile_contact_grid1 textarea{

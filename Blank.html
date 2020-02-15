@@ -66,20 +66,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             navbar: $('.navbar'),
             menuSpeed: 500,
             bodyOverlay: $('.overlay')
-		 });
-		 var dtime = getParameterByName('date'); 
-		// alert(dtime);
-	  });  
-	  
-  function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+         });
+      });
     </script>
 <!-- //nav -->
 <!-- logo -->
@@ -113,29 +101,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Location -->
 	<div class="menu">
 		<div class="container">	
-			<h3 class="agileits_head w3_agileits_head">Confirm your details<i class="fa fa-map-marker" aria-hidden="true"></i></h3>
+			<h3 class="agileits_head w3_agileits_head">Heading<i class="fa fa-map-marker" aria-hidden="true"></i></h3>
 			<div class="agile_contact_grids">
 				
 				<div class="w3_agile_contact_grid1" style="width:100%">
 					
-					<form action="stay.html" method="post">
-						<input type="text" title="Name" placeholder="Name" required="" />
-						<input type="email" name="Email" placeholder="Email" required="">
-						<input type="tel" name="Phone" placeholder="Phone Number" required="" pattern="[789][0-9]{9}"/>
-						<textarea name="Address" placeholder="Address..." required=""></textarea>
-						<label class="anim">
-							<input type="checkbox" id="chk1" required="" class="checkbox" style="background-color: #fff;">
-							<span>Need LLR</span> 
-							<div style="height: 10px;"></div>							
-							<input type="checkbox" id="chk2" required="" class="checkbox" style="background-color: #fff;">
-							<span>Own Car</span> 
-							<div style="height: 10px;"></div>							
-							<input type="checkbox" id="chk3" required="" class="checkbox" style="background-color: #fff;">
-							<span>I accept the terms of use</span> 
-							<div style="height: 10px;"></div>
-						</label> 
-						<input type="submit" id="btnsubmit" value="Allocate Slot" style="width: 100%;">
-					</form>
+					
+
+
 				</div>
 				<div class="clearfix"></div>
 			</div>

@@ -20,9 +20,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //Custom Theme files -->
 <!-- font-awesome-icons -->
 <link rel="stylesheet" href="css/font-awesome.min.css" />
-<!-- //font-awesome-icons -->
+
+<link rel="stylesheet" type="text/css" href="dist/css/pignose.calendar.min.css"/><!-- //font-awesome-icons -->
 <!-- js -->
 <script type='text/javascript' src='js/jquery-2.2.3.min.js'></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+<script type="text/javascript" src="dist/js/pignose.calendar.full.min.js"></script>
 <!-- //js -->
 <!-- web-fonts -->  
 <!--<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">-->
@@ -66,20 +71,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             navbar: $('.navbar'),
             menuSpeed: 500,
             bodyOverlay: $('.overlay')
-		 });
-		 var dtime = getParameterByName('date'); 
-		// alert(dtime);
-	  });  
-	  
-  function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+         });
+      });
     </script>
 <!-- //nav -->
 <!-- logo -->
@@ -100,7 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="w3layouts_breadcrumbs_left">
 				<ul>
 					<li><i class="fa fa-home" aria-hidden="true"></i><a href="main.html">Home</a><span>/</span></li>
-					<li><i class="fa fa-sign-in" aria-hidden="true"></i>Slot Booking</li>
+					<li><i class="fa fa-sign-in" aria-hidden="true"></i>Date Selection</li>
 				</ul>
 			</div>
 			<div class="w3layouts_breadcrumbs_right">
@@ -113,34 +106,97 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Location -->
 	<div class="menu">
 		<div class="container">	
-			<h3 class="agileits_head w3_agileits_head">Confirm your details<i class="fa fa-map-marker" aria-hidden="true"></i></h3>
+			<h3 class="agileits_head w3_agileits_head">Select Your Date<i class="fa fa-map-marker" aria-hidden="true"></i></h3>
 			<div class="agile_contact_grids">
 				
 				<div class="w3_agile_contact_grid1" style="width:100%">
+
+					<div class="calendar"></div>
 					
-					<form action="stay.html" method="post">
-						<input type="text" title="Name" placeholder="Name" required="" />
-						<input type="email" name="Email" placeholder="Email" required="">
-						<input type="tel" name="Phone" placeholder="Phone Number" required="" pattern="[789][0-9]{9}"/>
-						<textarea name="Address" placeholder="Address..." required=""></textarea>
-						<label class="anim">
-							<input type="checkbox" id="chk1" required="" class="checkbox" style="background-color: #fff;">
-							<span>Need LLR</span> 
-							<div style="height: 10px;"></div>							
-							<input type="checkbox" id="chk2" required="" class="checkbox" style="background-color: #fff;">
-							<span>Own Car</span> 
-							<div style="height: 10px;"></div>							
-							<input type="checkbox" id="chk3" required="" class="checkbox" style="background-color: #fff;">
-							<span>I accept the terms of use</span> 
-							<div style="height: 10px;"></div>
-						</label> 
-						<input type="submit" id="btnsubmit" value="Allocate Slot" style="width: 100%;">
-					</form>
+					<div class="agileits_w3layouts_blog">
+						
+					</div>					
+						<input type="submit" style="width: 100%;" value="Submit Now" onclick="Calldatasubmit();">					
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+	function Calldatasubmit(){
+		debugger;
+		var cookieValue = document.getElementById('content').innerHTML.replace('Your selected ','');		
+		var url="contact.html?date=''"+cookieValue+"''";
+		window.location=url;
+		return false;		
+	}
+		//<![CDATA[
+		$(function () {
+			$('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.version);
+			// Schedule Calendar
+			$('.calendar').pignoseCalendar({            
+				scheduleOptions: {
+					colors: {
+						holiday: '#2fabb7',
+						seminar: '#5c6270',
+						meetup: '#ef8080'
+					}
+				},
+				schedules: [{
+					name: 'holiday',
+					date: '2020-01-01'
+				}, {
+					name: 'holiday',
+					date: '2017-09-16'
+				}, {
+					name: 'holiday',
+					date: '2017-10-01',
+				}, {
+					name: 'holiday',
+					date: '2017-10-05'
+				}, {
+					name: 'holiday',
+					date: '2017-10-18',
+				}, {
+					name: 'seminar',
+					date: '2017-11-14'
+				}, {
+					name: 'seminar',
+					date: '2017-12-01',
+				}, {
+					name: 'meetup',
+					date: '2018-01-16'
+				}, {
+					name: 'meetup',
+					date: '2018-02-01',
+				}, {
+					name: 'meetup',
+					date: '2018-02-18'
+				}, {
+					name: 'meetup',
+					date: '2018-03-04',
+				}, {
+					name: 'meetup',
+					date: '2018-04-01'
+				}, {
+					name: 'meetup',
+					date: '2018-04-19',
+				}],
+				select: function (date, context) {					
+					var message = `<h3 id="content">Your selected ${(date[0] === null ? 'null' : date[0].format('YYYY-MM-DD'))}</h3><br /><div class="schedules-date"></div>`;
+					var $target = context.calendar.parent().next().show().html(message);
+	
+					for (var idx in context.storage.schedules) {
+						var schedule = context.storage.schedules[idx];
+						if (typeof schedule !== 'object') {
+							continue;
+						}
+						$target.find('.schedules-date').append('<strong>Events for this date</strong><span class="ui label default">' + schedule.name + '</span>');	}					
+				}
+			});
+		});    
+	</script>
 	
 <!-- Location -->
 <!-- footer -->
@@ -164,7 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="clearfix"> </div>
 			</div>
 			<div class="w3_agile_copyright">	
-					<p>&copy; 2016 City Drive World. All rights reserved | Design by <a href="https://www.facebook.com/Nagarjuna558">Nagarjun S</a></p>
+					<p>&copy; 2020 City Drive World. All rights reserved | Design by <a href="https://www.facebook.com/Nagarjuna558">Nagarjun S</a></p>
 			</div>
 		</div>
 	</div>
