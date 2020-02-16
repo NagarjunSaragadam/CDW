@@ -26,15 +26,11 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#778899" />
     <preference name="StatusBarStyle" value="lightcontent" />	
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="*">
-  <plugin name="cordova-plugin-googlemaps" spec="2.3.6">
-    <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCMbkN-50FAVi8CnC7fen0PpCs9Em6OxWQ" />    
-  </plugin>
-     
+    
 
     <access origin="*"/>    
     <access origin="https://*.youtube-nocookie.com" />
-    <access origin="http://*.youtube.com" />
+    <access origin="https://*.youtube.com" />
     <access origin="https://*.ytimg.com" />
     <access origin="https://*.gstatic.com" />
     <access origin="https://*.googlevideo.com" />
