@@ -26,8 +26,10 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#778899" />
     <preference name="StatusBarStyle" value="lightcontent" />	
-    
+    <plugin name="cordova-plugin-geolocation" source="npm" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
 
+    
     <access origin="*"/>    
     <access origin="https://*.youtube-nocookie.com" />
     <access origin="https://*.youtube.com" />
