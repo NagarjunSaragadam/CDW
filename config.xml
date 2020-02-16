@@ -27,8 +27,10 @@
     <preference name="StatusBarBackgroundColor" value="#778899" />
     <preference name="StatusBarStyle" value="lightcontent" />	
     <plugin name="cordova-plugin-whitelist" source="npm" spec="*">
-    <plugin name="cordova-plugin-googlemaps" source="npm" spec="*">
-    <allow-navigation href="https://*youtube.com/*"/>
+  <plugin name="cordova-plugin-googlemaps" spec="2.3.6">
+    <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCMbkN-50FAVi8CnC7fen0PpCs9Em6OxWQ" />    
+  </plugin>
+    <allow-navigation href="https://*youtube.com/*"/> 
 
     <access origin="*"/>    
     <access origin="https://*.youtube-nocookie.com" />
