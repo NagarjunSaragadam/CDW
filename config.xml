@@ -30,11 +30,11 @@
   <plugin name="cordova-plugin-googlemaps" spec="2.3.6">
     <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCMbkN-50FAVi8CnC7fen0PpCs9Em6OxWQ" />    
   </plugin>
-    <allow-navigation href="https://*youtube.com/*"/> 
+     
 
     <access origin="*"/>    
     <access origin="https://*.youtube-nocookie.com" />
-    <access origin="https://*.youtube.com" />
+    <access origin="http://*.youtube.com" />
     <access origin="https://*.ytimg.com" />
     <access origin="https://*.gstatic.com" />
     <access origin="https://*.googlevideo.com" />
