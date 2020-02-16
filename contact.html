@@ -13,6 +13,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Cookhouse Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, SmartPhone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
 <!-- //For-Mobile-Apps-and-Meta-Tags -->
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
@@ -30,14 +31,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 </head>
 <body class="bg">
+	<script src="main.js"></script>
 <!-- nav -->
 	<div class="nav_main">
 		<div class="overlay"></div>
 		<div class="mobile-side-menu">
 			<ul>
 					<li><a href="main.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-					<li><a href="contact.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Book Slot</a></li>
+					<li><a href=" Calender.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Book Slot</a></li>
 					<li><a href="stay.html"><i class="fa fa-map-marker" aria-hidden="true"></i>I Stay In</a></li>
+					<li><a href="ytube.html"><i class="fa fa-youtube" aria-hidden="true"></i>videos</a></li>
 			</ul>
 		</div>
 		<div class="navbar">
@@ -67,8 +70,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             menuSpeed: 500,
             bodyOverlay: $('.overlay')
 		 });
-		 var dtime = getParameterByName('date'); 
-		// alert(dtime);
+		 document.getElementById("sdate").value = getParameterByName('date').replace(/["']/g, "");
+		  
 	  });  
 	  
   function getParameterByName(name, url) {
@@ -113,16 +116,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Location -->
 	<div class="menu">
 		<div class="container">	
-			<h3 class="agileits_head w3_agileits_head">Confirm your details<i class="fa fa-map-marker" aria-hidden="true"></i></h3>
+			<h3 class="agileits_head w3_agileits_head">Confirm your details<i class="fa fa-table" aria-hidden="true"></i></h3>
 			<div class="agile_contact_grids">
 				
 				<div class="w3_agile_contact_grid1" style="width:100%">
 					
-					<form action="stay.html" method="post">
-						<input type="text" title="Name" placeholder="Name" required="" />
-						<input type="email" name="Email" placeholder="Email" required="">
-						<input type="tel" name="Phone" placeholder="Phone Number" required="" pattern="[789][0-9]{9}"/>
-						<textarea name="Address" placeholder="Address..." required=""></textarea>
+					<form action="#" method="post" id="contactForm">
+						<input type="text" id="name"  title="Name" placeholder="Name" required="" />
+						<input type="email" id="email" name="Email" placeholder="Email" required="">
+						<input type="tel" id="phone" name="Phone" placeholder="Phone Number" required="" pattern="[789][0-9]{9}"/>
+						<input type="text" readonly id="sdate" name="sdate" placeholder="sdate" required="" />
+						<textarea name="Address" id="address" placeholder="Address..." required=""></textarea>
 						<label class="anim">
 							<input type="checkbox" id="chk1" required="" class="checkbox" style="background-color: #fff;">
 							<span>Need LLR</span> 
