@@ -117,7 +117,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="agileits_w3layouts_blog">
 						
 					</div>					
-						<input type="submit" style="width: 100%;" value="Submit Now" onclick="Calldatasubmit();">					
+						<input type="submit" id="subdis" style="width: 100%;" value="Submit Now" disabled onclick="Calldatasubmit();">					
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -184,15 +184,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					date: '2018-04-19',
 				}],
 				select: function (date, context) {					
+				debugger;
 					var message = `<h3 id="content">Your selected ${(date[0] === null ? 'null' : date[0].format('YYYY-MM-DD'))}</h3><br /><div class="schedules-date"></div>`;
-					var $target = context.calendar.parent().next().show().html(message);
-	
+					if(Date.parse(date[0])-Date.parse(new Date())>=-1){
+					var $target = context.calendar.parent().next().show().html(message);	
 					for (var idx in context.storage.schedules) {
 						var schedule = context.storage.schedules[idx];
 						if (typeof schedule !== 'object') {
 							continue;
 						}
 						$target.find('.schedules-date').append('<strong>Events for this date</strong><span class="ui label default">' + schedule.name + '</span>');	}					
+						$("#subdis").attr("disabled", false);
+						}
+						
+						else
+						{
+						$("#subdis").attr("disabled", true);
+						event.preventDefault();
+						return false; 
+						}
 				}
 			});
 		});    
