@@ -12,7 +12,8 @@ function callcalender(objv)
 					var message = `<h3 id="content">Your selected Slot ${(date[0] === null ? 'null' : date[0].format('YYYY-MM-DD'))}</h3><br /><div class="schedules-date"></div>`;
 					var $target = context.calendar.parent().next().show().html(message);	
 					if(Date.parse(date[0])-Date.parse(new Date())>=-1)
-					{					    
+					{	
+						$("#subdis").attr("disabled", false);				
 					    for (var idx in context.storage.schedules) {
 						 var schedule = context.storage.schedules[idx];
 						 if (typeof schedule !== 'object') {	
@@ -22,12 +23,11 @@ function callcalender(objv)
 						 if(schedule.name=='holiday')
 							 message='Is available on afternoon. if ok then continue';
 						 else if(schedule.name=='seminar'){
-						   message='is taken Sorry..:), select another day';
+						   message='Is allocated Sorry,please select another day';
 						   $("#subdis").attr("disabled", true);
 						 }
 						 $target.find('.schedules-date').append('<strong>'+ message +'</strong>');	
-					    }
-						$("#subdis").attr("disabled", false);
+					    }						
 					}					
 					else
 					{
