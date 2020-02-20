@@ -44,6 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="Calender.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Book Slot</a></li>
 					<li><a href="stay.html"><i class="fa fa-map-marker" aria-hidden="true"></i>I Stay In</a></li>
 					<li><a href="ytube.html"><i class="fa fa-youtube" aria-hidden="true"></i>videos</a></li>
+					<li><a href="byke.html"><i class="fa fa-youtube" aria-hidden="true"></i>Biker zone</a></li>
 			</ul>
 		</div>
 		<div class="navbar">
@@ -65,16 +66,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<script type="text/javascript" src="js/slide-from-top.js"></script> 
-	<script type="text/javascript">
-      $(document).ready(function() {
-         $('.mobile-side-menu').slideFromTop({
-            menuBtn: $('.toggleMenu'),
-            navbar: $('.navbar'),
-            menuSpeed: 500,
-            bodyOverlay: $('.overlay')
-         });
-      });
-    </script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"> </script>
+	<script src="https://docs-examples.firebaseio.com/rest/saving-data/fireblog/posts.json?callback=gotData"> </script>	
+    <script type="text/javascript" src="calenderfirebasecall.js"></script> 
+	
+	
 <!-- //nav -->
 <!-- logo -->
 <div class="agileinfo_logo">
@@ -124,89 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 
-	<script type="text/javascript">
-	function Calldatasubmit(){	 
-		var cookieValue = document.getElementById('content').innerHTML.replace('Your selected ','');		
-		var url="contact.html?date=''"+cookieValue+"''";
-		window.location=url;
-		return false;		
-	}
-		//<![CDATA[
-		$(function () {
-			$('#wrapper .version strong').text('v' + $.fn.pignoseCalendar.version);
-			// Schedule Calendar
-			$('.calendar').pignoseCalendar({            
-				scheduleOptions: {
-					colors: {
-						holiday: '#2fabb7',
-						seminar: '#5c6270',
-						meetup: '#ef8080'
-					}
-				},
-				schedules: [{
-					name: 'holiday',
-					date: '2020-01-01'
-				}, {
-					name: 'holiday',
-					date: '2017-09-16'
-				}, {
-					name: 'holiday',
-					date: '2017-10-01',
-				}, {
-					name: 'holiday',
-					date: '2017-10-05'
-				}, {
-					name: 'holiday',
-					date: '2017-10-18',
-				}, {
-					name: 'seminar',
-					date: '2017-11-14'
-				}, {
-					name: 'seminar',
-					date: '2017-12-01',
-				}, {
-					name: 'meetup',
-					date: '2018-01-16'
-				}, {
-					name: 'meetup',
-					date: '2018-02-01',
-				}, {
-					name: 'meetup',
-					date: '2018-02-18'
-				}, {
-					name: 'meetup',
-					date: '2018-03-04',
-				}, {
-					name: 'meetup',
-					date: '2018-04-01'
-				}, {
-					name: 'meetup',
-					date: '2018-04-19',
-				}],
-				select: function (date, context) {					
-				debugger;
-					var message = `<h3 id="content">Your selected ${(date[0] === null ? 'null' : date[0].format('YYYY-MM-DD'))}</h3><br /><div class="schedules-date"></div>`;
-					if(Date.parse(date[0])-Date.parse(new Date())>=-1){
-					var $target = context.calendar.parent().next().show().html(message);	
-					for (var idx in context.storage.schedules) {
-						var schedule = context.storage.schedules[idx];
-						if (typeof schedule !== 'object') {
-							continue;
-						}
-						$target.find('.schedules-date').append('<strong>Events for this date</strong><span class="ui label default">' + schedule.name + '</span>');	}					
-						$("#subdis").attr("disabled", false);
-						}
-						
-						else
-						{
-						$("#subdis").attr("disabled", true);
-						event.preventDefault();
-						return false; 
-						}
-				}
-			});
-		});    
-	</script>
+	<script type="text/javascript" src="runsheduler.js"></script> 	
 	
 <!-- Location -->
 <!-- footer -->
@@ -226,7 +140,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>
 				</div>
-				
+				<div id="hidediv" style="display:none">
+				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="w3_agile_copyright">	

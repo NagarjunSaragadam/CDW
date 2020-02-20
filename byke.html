@@ -35,10 +35,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="overlay"></div>
 		<div class="mobile-side-menu">
 			<ul>
-				<li><a href="main.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-				<li><a href=" Calender.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Book Slot</a></li>
-				<li><a href="stay.html"><i class="fa fa-map-marker" aria-hidden="true"></i>I Stay In</a></li>
-				<li><a href="ytube.html"><i class="fa fa-youtube" aria-hidden="true"></i>videos</a></li>
+					<li><a href="main.html"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+					<li><a href="Calender.html"><i class="fa fa-sign-in" aria-hidden="true"></i>Book Slot</a></li>
+					<li><a href="stay.html"><i class="fa fa-map-marker" aria-hidden="true"></i>I Stay In</a></li>
+					<li><a href="ytube.html"><i class="fa fa-youtube" aria-hidden="true"></i>videos</a></li>
 					<li><a href="byke.html"><i class="fa fa-youtube" aria-hidden="true"></i>Biker zone</a></li>
 			</ul>
 		</div>
@@ -61,33 +61,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<script type="text/javascript" src="js/slide-from-top.js"></script> 
-	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"> </script>
-	<script src="https://docs-examples.firebaseio.com/rest/saving-data/fireblog/posts.json?callback=gotData"> </script>	
 	<script type="text/javascript">
       $(document).ready(function() {
-	   var  config = {
-          apiKey: "AIzaSyC-fgDmqzmAT5mtWcDubpWvTdRFwF4BKpQ",
-		  authDomain: "school-b9993.firebaseapp.com",
-		  databaseURL: "https://school-b9993.firebaseio.com",
-          projectId: "school-b9993",
-          storageBucket: "school-b9993.appspot.com",
-          messagingSenderId: "575418282170"
-       };
-firebase.initializeApp(config);
-var rootRef;
- var database = firebase.database(); 
-    database.ref().child("CurrentLocation").once('value', function(snapshot){
-        if(snapshot.exists()){            		
-            snapshot.forEach(function(data){			   									
-				 var myObj=JSON.stringify(data); 				
-				 var myObj2=JSON.parse(myObj);				 	
-				 console.log(myObj2);		
-                 var geolocation='https://maps.google.com/maps?width=100%&height=600&hl=en&coord=0,0&q='+myObj2+'+(CIty%20Drive%20World)&ie=UTF8&t=&z=14&iwloc=B&output=embed';
-				 document.getElementById("framelove").src =geolocation;
-				 //window.frames['framelove'].location.replace(geolocation);				 								 
-            });            					  
-        }
-		});
          $('.mobile-side-menu').slideFromTop({
             menuBtn: $('.toggleMenu'),
             navbar: $('.navbar'),
@@ -100,10 +75,10 @@ var rootRef;
 <!-- logo -->
 <div class="agileinfo_logo">
 		<div class="agile_container">
-			<h1><a href="main.html">RAVI TEJA<span>
-					<i class="fa fa-car" aria-hidden="true"></i>
-					City Drive World
-					<i class="fa fa-car" aria-hidden="true"></i>
+			<h1><a href="main.html">Biker Adda<span>
+					<i class="fa fa-motorcycle" aria-hidden="true"></i>
+					Neelu Arts
+					<i class="fa fa-motorcycle" aria-hidden="true"></i>
 				</span></a></h1>
 		</div>
 	</div>
@@ -115,7 +90,7 @@ var rootRef;
 			<div class="w3layouts_breadcrumbs_left">
 				<ul>
 					<li><i class="fa fa-home" aria-hidden="true"></i><a href="main.html">Home</a><span>/</span></li>
-					<li><i class="fa fa-map-marker" aria-hidden="true"></i>Current Stay</li>
+					<li><i class="fa fa-sign-in" aria-hidden="true"></i>Youtube Tutorials</li>
 				</ul>
 			</div>
 			<div class="w3layouts_breadcrumbs_right">
@@ -124,18 +99,23 @@ var rootRef;
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-
-	<div class="menu">
-			<div class="container">	
-				<h3 class="agileits_head w3_agileits_head">Currently I am Staying in<i class="fa fa-map-marker" aria-hidden="true"></i></h3>
-				
-			</div>
-		</div>
 <!-- //breadcrumbs -->
 <!-- Location -->
-	<div class="w3_map">
-			<div style="width: 100%"><iframe id="framelove" width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/journey-planner.htm">Journey Planner UK</a></iframe></div><br />
+	<div class="menu">
+		<div class="container">	
+			<h3 class="agileits_head w3_agileits_head">Tutorials<i class="fa fa-youtube-square" aria-hidden="true"></i></h3>
+			<div class="agile_contact_grids">
+				
+				<div class="w3_agile_contact_grid1" style="width:100%">
+					
+					<iframe width="100%" height="300" src="https://www.youtube.com/embed/?listType=playlist&list=PL5qXG_b767l9978P4_gU8aBy2L3hwUlTD" frameborder="0" allowfullscreen></iframe>
+
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
 	</div>
+	
 <!-- Location -->
 <!-- footer -->
 	<div class="footer">
