@@ -29,7 +29,8 @@
     <plugin name="cordova-plugin-geolocation" source="npm" />
     <plugin name="cordova-plugin-whitelist" source="npm" />
 
-    
+    <icon src="icon.png"/>
+
     <access origin="*"/>    
     <access origin="https://*.youtube-nocookie.com" />
     <access origin="https://*.youtube.com" />
